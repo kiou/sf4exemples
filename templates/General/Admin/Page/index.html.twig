@@ -1,0 +1,62 @@
+{% extends "General/Admin/Layout/layout.html.twig" %}
+
+{% block contentTitre %} Accueil administration {% endblock %}
+
+{% block content %}
+
+    <a href="{{ path('admin_galerie_add') }}" class="btn">Ajouter une galerie</a>
+
+    <br>
+    <br>
+
+    <table class="table">
+        <tr>
+            <th width="15%">Image</th>
+            <th class="left" width="70%">Galerie</th>
+            <th width="15%">Actions</th>
+        </tr>
+
+        {% for galerie in galeries %}
+
+            <tr>
+                <td>
+                    {% if galerie.image.url is defined %}
+                        <img src="{{ galerie.image.url }}" style="width:100%;">
+                    {% endif %}
+                </td>
+                <td class="left">{{ galerie.title }}</td>
+                <td><a href="{{ path('admin_galerie_edit',{'id': galerie.id}) }}" class="btn">Modifier</a></td>
+            </tr>
+
+        {% endfor %}
+    </table>
+
+    <br>
+        <h2>La liste des galeries avec leurs catégories</h2>
+        {% for galerie in galeries %}
+
+            <p>
+                <strong>{{ galerie.title }}</strong>
+                {% if galerie.categories is defined %}
+                    {% for categorie in galerie.categories %}
+                        <span>{{ categorie.title }}</span>
+                    {% endfor %}
+                {% endif %}
+            </p>
+
+        {% endfor %}
+
+        <br>
+        <br>
+        <h2>La liste des galeries par catégorie</h2>
+
+        {% for categorie in categories %}
+            <strong>{{ categorie.title }}</strong>
+                {% for galerie in categorie.galeries %}
+                    <span>{{ galerie.title }}</span><br>
+                {% endfor %}
+        {% endfor %}
+
+    <br>
+
+{% endblock %}

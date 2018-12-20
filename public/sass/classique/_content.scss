@@ -1,0 +1,48 @@
+/* Mise en avant page d'accueil */
+.aboutimage{
+    width: 100%;
+    background-color: $gris;
+    @include border-radius($borderBox);
+    margin-bottom: 30px;
+}
+
+.aboutimageLeft{
+    width: 30%;
+    float: left;
+}
+
+.aboutimageRight{
+    width: 70%;
+    float: right;
+    padding:140px;
+    background-color: $blanc;
+    @include border-right-radius($borderBox);
+    h1{
+        margin-bottom: 30px;
+    }
+    p{
+        margin-bottom: 30px;
+    }
+}
+
+.aboutlink{
+    width: 100%;
+    text-align: center;
+    //margin-bottom: 30px;
+    padding: 40px;
+    background-color: $blanc;
+    @include border-radius($borderBox);
+    cursor: pointer;
+    @include transition-property(opacity, transform);
+    @include transition-duration(0.3s);
+    @include transition-timing-function(ease);
+    @include transform(scale(1));
+    opacity:1;
+    &:hover{
+        opacity:0.5;
+        @include transform(scale(0.98));
+    }
+    h2{
+        margin-bottom: 30px;
+    }
+}

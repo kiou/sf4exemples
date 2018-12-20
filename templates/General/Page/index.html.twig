@@ -1,0 +1,10 @@
+{% extends "General/Layout/layout.html.twig" %}
+
+{% block metaTitle %}{{ 'accueil.client.metatitle'|trans }}{% endblock %}
+{% block metaDescription %}{{ 'accueil.client.metadescription'|trans }}{% endblock %}
+
+{% block content %}
+    {{ include("General/Include/aboutimage.html.twig") }}
+
+    {{ include("General/Include/aboutlink.html.twig") }}
+{% endblock %}

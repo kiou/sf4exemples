@@ -1,0 +1,36 @@
+user:
+    resource: "routes/user.yaml"
+    prefix:   /{_locale}
+    requirements:
+      _locale: en|fr
+
+general:
+    resource: "routes/general.yaml"
+    prefix:   /{_locale}
+    requirements:
+      _locale: en|fr
+
+page:
+    resource: "routes/page.yaml"
+    prefix:   /{_locale}
+    requirements:
+      _locale: en|fr
+
+referencement:
+    resource: "routes/referencement.yaml"
+    prefix:   /{_locale}
+    requirements:
+      _locale: en|fr
+
+galerie:
+    resource: "routes/galerie.yaml"
+    prefix:   /{_locale}
+    requirements:
+      _locale: en|fr
+
+redirect_rules_nolocal:
+    path:  /
+    defaults:
+        _controller : FrameworkBundle:Redirect:urlRedirect
+        path: /fr/
+        permanent: true

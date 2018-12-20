@@ -1,0 +1,9 @@
+admin_galerie_add:
+    path:     admin/galerie/add
+    defaults: { _controller: App\Controller\Galerie\GalerieController::AddAdmin }
+
+admin_galerie_edit:
+    path:     /admin/galerie/edit/{id}
+    defaults: { _controller: App\Controller\Galerie\GalerieController::EditAdmin }
+    requirements:
+        id: \d+
